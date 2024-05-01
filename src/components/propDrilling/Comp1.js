@@ -3,7 +3,7 @@ import { Comp11 } from './Comp11'
 
 export const Comp1 = () => {
 
-    let [data] = useState( "Afternoon" )
+  let [data] = useState( "Afternoon" )
 
   return (
     <div>
