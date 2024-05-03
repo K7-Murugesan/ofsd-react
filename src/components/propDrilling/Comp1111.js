@@ -1,8 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { Context} from '../Context-API/ContextAPI'
 import styled from 'styled-components'
-export const Comp1111 = ({newData}) => {
+export const Comp1111 = ({newData, collectingData}) => {
 
+  let [nestedChildData, setNestedChildData ] = useState("Im From Child")
+
+  let passDataToParent = ()=>{
+    collectingData(nestedChildData)
+  }
 
   let valueFromCont = useContext( Context )
 
@@ -28,7 +33,7 @@ export const Comp1111 = ({newData}) => {
            }
         </Context.Consumer>
         <h5> {valueFromCont} </h5>
-        <NewButton> New Button </NewButton>
+        <NewButton onClick={passDataToParent}> New Button </NewButton>
     </div>
   )
 }

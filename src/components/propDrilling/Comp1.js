@@ -5,9 +5,16 @@ export const Comp1 = () => {
 
   let [data] = useState( "Afternoon" )
 
+  let [recievedData, setRecievedData] = useState("")
+
+  let recieveDataFromChild = (dataFromChild) => {
+    setRecievedData( dataFromChild )
+  }
+
   return (
     <div>
-        <Comp11  data = {data}  />
+        <h1> {recievedData} </h1>
+        <Comp11  data = {data} collectingData = {recieveDataFromChild}  />.
     </div>
   )
 }
